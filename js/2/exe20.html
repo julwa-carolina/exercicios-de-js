@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <label for="inum1">Numero</label>
+        <input type="number" id="inum1">
+        <label for="inum2">Numero</label>
+        <input type="number" id="inum2">
+        <button type="submit" onclick="calculo()">calculando...</button>
+    </div>
+    <div id="res"></div>
+    <script>
+        function calculo() {
+            var num1 = parseFloat(document.getElementById('inum1').value)
+            var num2 = parseFloat(document.getElementById('inum2').value)
+            var res = document.getElementById('res')
+            var op = prompt('Qual operacao matematica? (soma, subtracao, multiplicacao, divisao)')
+            
+            if (op == 'soma' || op == 'Soma' || op == 'SOMA') {
+                res.innerHTML = `Soma: ${num1 + num2}`
+            } else if (op == 'subtracao' || op == 'Subtracao' || op == 'SUBTRACAO') {
+                res.innerHTML = `Subtracao: ${num1 - num2}`
+            } else if (op == 'multiplicacao' || op == 'Multiplicacao' || op == 'MULTIPLICACAO') {
+                res.innerHTML = `Multiplicacao: ${num1*num2}`
+            } else if (op == 'divisao' || op == 'Divisao' || op == 'DIVISAO') {
+                res.innerHTML = `Divisao: ${num1/num2}`
+            } else {
+                res.innerHTML = `Operacao invalida, tente novamente`
+            }
+
+        }
+    </script>
+</body>
+</html>

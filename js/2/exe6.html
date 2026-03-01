@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex 6</title>
+</head>
+<body>
+    <div>
+        <label for="inum1">Numero 1</label>
+        <input type="number" id="inum1">
+
+        <label for="inum2">Numero 2</label>
+        <input type="number" id="inum2">
+
+        <label for="inum3">Numero 3</label>
+        <input type="number" id="inum3">
+
+        <button type="submit" onclick="ordenar()">Ordenar numeros</button>
+    </div>
+
+    <script>
+        function ordenar() {
+            var num1 = parseInt(document.getElementById('inum1').value)
+            var num2 = parseInt(document.getElementById('inum2').value)
+            var num3 = parseInt(document.getElementById('inum3').value)
+            var p = num1 
+            var s = num2 
+            var t = num3 
+            var aux = 0
+
+            if (num1 > num2) {  
+                p = num2 
+                s = num1
+            } 
+            
+            if (s > num3) {  
+                aux = s      
+                s = num3 
+                t = aux
+            } 
+            
+            if (p > s) { 
+                aux = p
+                p = s
+                s = aux
+            }
+
+            window.alert(`${t}, ${s}, ${p}`)
+
+        }
+    </script>
+</body>
+</html>

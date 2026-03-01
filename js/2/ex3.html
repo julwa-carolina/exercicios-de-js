@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eleicoes</title>
+</head>
+<body>
+    <label for="idade">Digite a sua idade</label>
+    <input type="number" id="idade">
+    <button type="submit" onclick="verificar()">Verificar idade</button>
+    <script>
+        function verificar() {
+            var idade = parseInt(document.getElementById('idade').value)
+            if (idade < 16) {
+                window.alert('não pode vota')
+            } else if (idade <= 17 || idade > 65) {
+                window.alert('voto é facultativo')
+            } else {
+                window.alert('obrigatório votar')
+            }
+        }
+    </script>
+</body>
+</html>

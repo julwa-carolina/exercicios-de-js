@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <label for="inum1">Nota: </label>
+        <input type="number" id="inum1">
+        <label for="inum2">Nota: </label>
+        <input type="number" id="inum2">
+        <button type="submit" onclick="media()">Calcular</button>
+    </div>
+    <script>
+        function media() {
+            var nota1 = parseFloat(document.getElementById('inum1').value)
+            var nota2 = parseFloat(document.getElementById('inum2').value)
+
+            var media = (nota1 + nota2) / 2
+            var conceito = ''
+            var msg = ''
+
+            if (media <= 4) {
+                conceito = 'E'
+                msg = 'Reprovado'
+            } else if (media > 4 && media <= 6) {
+                conceito = 'D'
+                msg = 'Reprovado'
+            } else if (media > 6 && media <= 7.5) {
+                conceito = 'C'
+                msg = 'Aprovado'
+            } else if (media > 7.5 && media <= 9) {
+                conceito = 'B'
+                msg = 'Aprovado'
+            } else if (media > 9 && media <= 10) {
+                conceito = 'A'
+                msg = 'Aprovado'
+            } else if (media > 10 || media < 0) {
+                window.alert('[Erro]')
+                
+            }
+
+            window.alert(`NOTAS: ${nota1}, ${nota2}
+                media: ${media}
+                conceito: ${conceito}
+                ${msg}
+            `)
+
+        }
+    </script>
+</body>
+</html>

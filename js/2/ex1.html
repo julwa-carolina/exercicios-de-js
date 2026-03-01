@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>senha</title>
+</head>
+<body>
+    <label for="isenha">Digite a sua senha</label>
+    <input type="password" name="senha" id="isenha" maxlength="4">
+    <button type="submit" onclick="login()">Entrar</button>
+    <script>
+        var senhaCerta = "2112"
+        function login() {
+            var tentativa = document.getElementById("isenha").value
+
+            if (tentativa === senhaCerta) {
+                window.alert("Senha correta!")
+            } else {
+                window.alert("[ERRO]")
+            }
+        }
+    </script>
+</body>
+</html>

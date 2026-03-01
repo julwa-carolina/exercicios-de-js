@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>notas</title>
+</head>
+<body>
+    <div>
+        <label for="nota1"></label>
+        <input type="number" id="nota1">
+        <label for="nota2"></label>
+        <input type="number" id="nota2">
+        <button type="submit" onclick="calcular()">Calcular media</button>
+
+        <script>
+            function calcular() {
+                var nota1 = parseFloat(document.getElementById('nota1').value)
+                var nota2 = parseFloat(document.getElementById('nota2').value)
+
+                var media = (nota1 + nota2) /2
+
+                if (media >= 0 && media < 7) {
+                    window.alert(`Reprovado: ${media}`)
+                } else if (media >= 7 && media < 10) {
+                    window.alert(`APROVADO!! ${media}`)
+                } else if (media == 10) {
+                    window.alert(`Aprovado com Distinção ${media}`)
+                } else {
+                    window.alert(`Nota invalida ${media}`)
+                }
+            }
+            
+        </script>
+    </div>
+</body>
+</html>

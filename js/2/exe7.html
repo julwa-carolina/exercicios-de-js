@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qual turno? ex 7</title>
+</head>
+<body>
+    <div>
+        <label for="iturno">Digite o turno que voce estuda: M-matutino, V-Vespertino e N- Noturno</label>
+        <input type="text" id="iturno">
+        <button type="submit" onclick="turno()">Verificar</button>
+    </div>
+    <script>
+        function turno() {
+            var turno = document.getElementById('iturno').value
+
+            if (turno == 'm' || turno == 'M') {
+                window.alert('Bom dia!!')
+            } else if (turno == 'v' || turno == 'V') {
+                window.alert('Boa tarde!!')
+            } else if (turno == 'n' || turno == 'N') {
+                window.alert('Boa noite!!')
+            } else {
+                window.alert('[ERRO] Valor Inválido!')
+            }
+        }
+    </script>
+</body>
+</html>

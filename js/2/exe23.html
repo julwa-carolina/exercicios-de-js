@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fruteiro</title>
+    <style>
+        label, input {
+            padding: 5px;
+            margin: 5px;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <label for="imorango">quantidade de morango</label>
+        <input type="number" id="imorango"> Kg
+        <br>
+        <label for="imaca">quantidade de maca</label>
+        <input type="number" id="imaca"> kg
+        <br>
+        <button type="submit" onclick="fruteiro()">calculando...</button>
+    </div>
+    <div id="res"></div>
+    <script>
+        function fruteiro() {
+            var morango = parseFloat(document.getElementById('imorango').value)
+            var maca = parseFloat(document.getElementById('imaca').value)
+            var res = document.getElementById('res')
+            var precoMO = 0
+            var precoMACA = 0
+            var preco = 0
+
+            if (morango <=5) {
+                precoMO = morango*2.50
+            } else if (morango > 5) {
+                precoMO = morango*2.20
+            } 
+
+            if (maca <=5) {
+                precoMACA = maca*1.80 
+            } else if (maca > 5) {
+                precoMACA = maca*1.50
+            }
+
+            if (precoMACA + precoMO >= 25 || morango + maca >= 8) {
+                preco = (precoMACA + precoMO)*0.90
+                res.innerHTML = `O preco total: R$${preco.toFixed(2)} R$${precoMO.toFixed(2)} - R$${precoMACA.toFixed(2)}`
+                window.alert(`DESCONTO!!`)
+            } else {
+                preco = precoMACA + precoMO
+                res.innerHTML = `O preco total: R$${preco.toFixed(2)} --- morango: R$${precoMO.toFixed(2)} - maca R$${precoMACA.toFixed(2)}`
+            }
+            
+        }
+    </script>
+    
+</body>
+</html>

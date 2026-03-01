@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maior ou menor</title>
+</head>
+<body>
+    <div>
+        <label for="inum1">Digite o 1* numero</label>
+        <input type="number" id="inum1">
+    </div>
+    <div>
+        <label for="inum2">Digite o 2* numero</label>
+        <input type="number" id="inum2">
+    </div>
+    <button type="submit" onclick="maior()">Verificar</button>
+
+    <script>
+        function maior() {
+            var num1 = parseFloat(document.getElementById('inum1').value)
+            var num2 = parseFloat(document.getElementById('inum2').value)
+
+            if (num1 < num2 && num2 > num1) {
+                window.alert(`O numero ${num2} eh o maior e o ${num1} menor`)
+            } else if (num2 < num1 && num1 > num2) {
+                window.alert(`O numero ${num1} eh o maior e o ${num2} menor`)
+            } else if (num1 === num2) {
+                window.alert(`o ${num1} e o ${num2} sao gemeos`)
+            }
+        }
+    </script>
+    
+</body>
+</html>

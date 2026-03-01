@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>aposentadoria</title>
+</head>
+<body>
+    <input type="number" id="idade">
+    <button type="submit" onclick="aposentadoria()">Verificar</button>
+    <script>
+        function aposentadoria() {
+            var idade = parseInt(document.getElementById('idade').value)
+            if (idade >= 65) {
+                window.alert('Ja pode se aposentar ou ja eh um aposentado')
+            } else {
+                window.alert(`Ainda nao pode se aposentar. Falta ${65 - idade} anos`)
+            }
+        }
+    </script>
+</body>
+</html>

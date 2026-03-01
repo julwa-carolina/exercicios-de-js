@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reajuste salarial</title>
+</head>
+<body>
+    <div>
+        <label for="inum">Salario: </label>
+        <input type="number" id="inum">
+        <button type="submit" onclick="reajuste()">Reajuste</button>
+    </div>
+    <script>
+        function reajuste() {
+            var sal = parseFloat(document.getElementById('inum').value)
+            var por = 0
+            var aum = 0
+            var novoSal = 0 
+
+            if (sal <= 280) {
+                por = 20
+                aum = sal*(por/100)
+                novoSal = aum + sal
+                window.alert(`REAJUSTE 
+                    o salário antes do reajuste: ${sal} 
+                    o percentual de aumento aplicado: ${por}% 
+                    o valor do aumento: ${aum} 
+                    o novo salário, após o aumento: ${novoSal}
+                `)
+            } else if (sal > 280 && sal < 700) {
+                por = 15
+                aum = sal*(por/100)
+                novoSal = aum + sal
+                window.alert(`REAJUSTE 
+                    o salário antes do reajuste: ${sal} 
+                    o percentual de aumento aplicado: ${por}%
+                    o valor do aumento: ${aum} 
+                    o novo salário, após o aumento: ${novoSal}
+                `)
+            } else if (sal > 700 && sal < 1500) {
+                por = 10
+                aum = sal*(por/100)
+                novoSal = aum + sal
+                window.alert(`REAJUSTE 
+                    o salário antes do reajuste: ${sal} 
+                    o percentual de aumento aplicado: ${por}% 
+                    o valor do aumento: ${aum} 
+                    o novo salário, após o aumento: ${novoSal}
+                `)
+            } else if (sal > 1500) {
+                por = 5
+                aum = sal*(por/100)
+                novoSal = aum + sal
+                window.alert(`REAJUSTE 
+                    o salário antes do reajuste: ${sal} 
+                    o percentual de aumento aplicado: ${por}% 
+                    o valor do aumento: ${aum} 
+                    o novo salário, após o aumento: ${novoSal}
+                `)
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        label, input {
+            padding: 5px;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <label for="pg1">pergunta 1: Telefonou para a vítima?</label>
+        <input type="text" id="pg1"> 
+        <br>
+        <label for="pg2">pergunta 2: Esteve no local do crime?</label>
+        <input type="text" id="pg2">
+        <br>
+        <label for="pg3">pergunta 3: Mora perto da vítima?</label>
+        <input type="text" id="pg3">
+        <br>
+        <label for="pg4">pergunta 4: Devia para a vítima?</label>
+        <input type="text" id="pg4">
+        <br>
+        <label for="pg5">pergunta 5: Já trabalhou com a vítima?</label>
+        <input type="text" id="pg5">
+        <button type="submit" onclick="suspeito()">verificando...</button>
+    </div>
+    <div id="res"></div>
+    <script>
+        function suspeito() {
+            var pg1 = document.getElementById('pg1').value
+            var pg2 = document.getElementById('pg2').value
+            var pg3 = document.getElementById('pg3').value
+            var pg4 = document.getElementById('pg4').value
+            var pg5 = document.getElementById('pg5').value
+            var res = document.getElementById('res')
+            var count = 0
+
+            if (pg1 == 'Sim' || pg1 == 'sim' || pg1 == 'SIM') {
+                count = count + 1
+            } 
+
+            if (pg2 == 'Sim' || pg2 == 'sim' || pg2 == 'SIM') {
+                count = count + 1
+            } 
+
+            if (pg3 == 'Sim' || pg3 == 'sim' || pg3 == 'SIM') {
+                count = count + 1
+            }
+
+            if (pg4 == 'Sim' || pg4 == 'sim' || pg4 == 'SIM') {
+                count = count + 1
+            }
+            
+            if (pg5 == 'Sim' || pg5 == 'sim' || pg5 == 'SIM') {
+                count = count + 1
+            } 
+
+            if (count == 5) {
+                res.innerHTML = `ASSASSINO!!!!!!!!!!! ${count}`
+            } else if (count == 4 || count == 3) {
+                res.innerHTML = `SUSPEITO!!!!!!!!!!!!!! ${count}`
+            } else if (count == 2) {
+                res.innerHTML = `CUMPLICE!!! ${count}`
+            } else {
+                res.innerHTML = `INOCENTE!!!!!!!!! ${count}`
+            }
+        }
+    </script>
+</body>
+</html>

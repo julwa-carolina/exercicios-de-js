@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabajara</title>
+</head>
+<body>
+    <div>
+        <h1>Promoção de carnes</h1>
+        <p>     ---------------- Até 5 Kg ------------ Acima de 5 Kg </p>
+    <p>File Duplo: R$ 4,90 por Kg ----- R$ 5,80 por Kg</p>
+    <p>Alcatra: ---- R$ 5,90 por Kg ---- R$ 6,80 por Kg</p>
+    <p>Picanha:---- R$ 6,90 por Kg ---- R$ 7,80 por Kg</p>
+    <label for="icarne">Escolha somente um tipo de carne: </label>
+    <input type="text" id="icarne">
+    <br>
+    <label for="iqtd">quantidade</label>
+    <input type="number" id="iqtd">
+    <button type="submit" onclick="carne()">Comprar</button>
+    </div>
+    <div id="res"></div>
+</body>
+<script>
+    function carne() {
+        var carne = document.getElementById('icarne').value
+        var qtd = parseFloat(document.getElementById('iqtd').value)
+        var res = document.getElementById('res')
+        var preco = 0
+        var cartao = prompt('Tem o cartão Tabajara?')
+        var des = 0
+        var total = 0
+        if (carne == 'File Duplo' && qtd <= 5) {
+            preco = qtd*4.90
+            
+
+        } else if (carne == 'File Duplo' && qtd > 5) {
+            preco = qtd*5.80
+            
+        } else if (carne == 'Alcatra' && qtd <= 5) {
+            preco = qtd*5.90
+            
+        } else if (carne == 'Alcatra' && qtd > 5) {
+            preco = qtd*6.80
+            
+        } else if (carne == 'Picanha' && qtd <= 5) {
+            preco = qtd*6.90
+            
+        } else if (carne == 'Picanha' && qtd > 5) {
+            preco = qtd*7.80
+            
+        }
+
+        if (cartao == 'SIM' || cartao == 'S' || cartao == 's' || cartao == 'sim' || cartao == 'Sim') {
+            window.alert('DESCONTO!!!')
+            des = preco*0.05
+            total = preco - des
+            res.innerHTML = `tipo e quantidade de carne: ${carne} <br> preço total: R$${preco.toFixed(2)} <br> valor do desconto: R$${des.toFixed(2)} <br> valor a pagar: R$${total.toFixed(2)}`
+            
+        } else {
+            total = preco - des
+            res.innerHTML = `tipo e quantidade de carne: ${carne} <br> preço total: R$${preco.toFixed(2)} <br> valor do desconto: R$${des} <br> valor a pagar: R$${total.toFixed(2)}`
+        }
+
+    }
+</script>
+</html>

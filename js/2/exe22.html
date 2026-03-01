@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Posto de combustivel</title>
+</head>
+<body>
+    <div>
+        <label for="icombus">A-álcool, G-gasolina</label>
+        <input type="text" id="icombus">
+        <br>
+        <label for="ilitros">Quantidade de combustivel</label>
+        <input type="number" id="ilitros">
+        <button type="submit" onclick="combus()">calcular</button>
+    </div>
+    <div id="res"></div>
+    <script>
+        function combus() {
+            var combustivel = document.getElementById('icombus').value
+            var litros = parseFloat(document.getElementById('ilitros').value)
+            var res = document.getElementById('res')
+            var des = 0
+            var total = 0
+
+            if (combustivel == 'A') {
+                if (litros <= 20) {
+                    des = 1.90*0.97
+                    total = litros*des
+                } else if (litros > 20) {
+                    des = 1.90*0.95
+                    total = litros*des
+                }
+            }
+
+            if (combustivel == 'G') {
+                if (litros <= 20) {
+                    des = 2.50*0.96
+                    total = litros*des
+                } else if (litros > 20) {
+                    des = 2.50*0.94
+                    total = litros*des
+                }
+            }
+            
+            res.innerHTML = `O total sera: R$${total}, ${litros}L - valor do litro com desconto: ${des}`
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Folha de pagamento</title>
+</head>
+<body>
+    <div>
+        <label for="ihora">Valor da hora</label>
+        <input type="number" id="ihora">
+        <br>
+        <label for="imes">Quantidade de horas trabalhadas por mes</label>
+        <input type="number" id="imes">
+        <button type="submit" onclick="folha()">Calculando folha de pagamento...</button>
+    </div>
+    <div id="res"></div>
+    <script>
+        function folha() {
+            var vHora = parseFloat(document.getElementById('ihora').value)
+            var qtdMes = parseFloat(document.getElementById('imes').value)
+            var res = document.getElementById('res')
+
+            var salarioB = vHora*qtdMes
+            var irrf = 0
+            var salarioL = 0
+            var fgts = 0
+            var sind = 0
+
+            if (salarioB <= 900) {
+                irrf = 0
+            } else if (salarioB > 900 && salarioB <= 1500) {
+                irrf = salarioB*0.05
+            } else if (salarioB > 1500 && salarioB <= 2500) {
+                irrf = salarioB*0.10
+            } else if (salarioB > 2500) {
+                irrf = salarioB*0.20
+            }
+
+            fgts = salarioB*0.11
+            sind = salarioB*0.03
+            salarioL = salarioB - sind - irrf
+            parseFloat(salarioL)
+
+            res.innerHTML = `Salário Bruto: ${salarioB} <br> (-) IR: ${irrf} <br> FGTS (11%): ${fgts} <br>Sindicato (3%): ${sind} <br> Total de descontos: ${sind+irrf} <br> Salário Liquido: ${salarioL}`    
+
+        }
+    </script>
+</body>
+</html>

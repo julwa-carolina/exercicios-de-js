@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vogal ou consoante</title>
+</head>
+<body>
+    <div>
+        <label for="iletra">Digite uma letra qualquer</label>
+        <input type="text" name="letra" id="iletra">
+       <button type="submit" onclick="letraVeri()">verificar</button>
+    </div>
+    <script>
+        function letraVeri() {
+            var letra = document.getElementById('iletra').value
+
+            if (letra == 'a' || letra == 'e' || letra == 'i' || letra == 'o' || letra == 'u') {
+                window.alert(`a letra "${letra}" eh vogal`)
+            } else {
+                window.alert(`a letra "${letra}" eh consoante`)
+            }
+        }
+    </script>
+</body>
+</html>
